@@ -2,9 +2,9 @@ name: Go
 
 on:
   push:
-    branches: [ Aula_1 ]
+    branches: [ '*' ]
   pull_request:
-    branches: [ Aula_1 ]
+    branches: [ '*' ]
 
 jobs:
 
@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         go_version: ['1.18', '1.17', '>=1.18']
+    
     steps:
     - uses: actions/checkout@v3
 
