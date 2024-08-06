@@ -52,5 +52,10 @@ jobs:
         os: ['ubuntu-latest']
     steps:
     - uses: actions/checkout@v3
+
     - name: Build
       run: go build -v main.go
+
+  docker:
+    needs: build
+    uses: ./.github/workflows/Docker.yml
