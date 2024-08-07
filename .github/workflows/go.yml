@@ -52,6 +52,12 @@ jobs:
     - name: Build
       run: go build -v main.go
 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.3.6
+      with:
+        name: programa-go
+        path: main
+        
   docker:
     needs: build
     uses: ./.github/workflows/Docker.yml
